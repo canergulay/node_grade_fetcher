@@ -27,7 +27,7 @@ let doWeHaveNewGrade = false
 app.get('/',  async (req, res) =>  {
     res.send({
         'Açıklanan yeni not var mı ? :':doWeHaveNewGrade,
-        'En son kontrol ettiğim zaman :': getDate(),
+        'En son kontrol ettiğim zaman :': lastDate,
         '15 Dakikada bir kontrol ettim, şuana kadar ettiğim kontrol sayısı :':requestNumber,
     })
 })
@@ -55,7 +55,7 @@ function checkContiniously(){
         if (data !== dataCached){
             doWeHaveNewGrade = true
         }
-    },1200000) // 15 DAKIKALIK BIR ARALIK 
+    },1200000) // 20
 }
 
 
