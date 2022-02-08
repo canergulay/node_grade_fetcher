@@ -38,6 +38,7 @@ app.get('/last', (req, res) =>  {
 
 app.get('/reset',(req, res) =>  {
     doWeHaveNewGrade = false
+    mailer.sendmail()
     res.send('ALRIGHT, RESETLEDIK')
 })
 
